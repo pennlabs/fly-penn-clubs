@@ -1,0 +1,106 @@
+{
+	"folders": [
+		{
+			"name": "Frontend",
+			"path": "frontend"
+		},
+		{
+			"name": "Backend",
+			"path": "backend"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.js": "javascriptreact"
+		},
+		"files.eol": "\n",
+	},
+	"extensions": {
+		"recommendations": [
+			"dbaeumer.vscode-eslint",
+			"ms-python.python",
+			"ms-vscode.vscode-typescript-tslint-plugin"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Run Penn Clubs",
+				"dependsOn": [
+					"Run Backend (Penn Clubs)",
+					"Run Frontend (Penn Clubs)"
+				],
+				"problemMatcher": []
+			},
+			{
+				"label": "Run Hub@Penn",
+				"dependsOn": [
+					"Run Backend (Hub@Penn)",
+					"Run Frontend (Hub@Penn)"
+				],
+				"problemMatcher": []
+			},
+			{
+				"type": "shell",
+				"label": "Run Backend (Penn Clubs)",
+				"args": [
+					"run",
+					"python",
+					"manage.py",
+					"runserver"
+				],
+				"command": "pipenv",
+				"options": {
+					"cwd": "${workspaceFolder:Backend}"
+				},
+				"problemMatcher": []
+			},
+			{
+				"type": "shell",
+				"label": "Run Frontend (Penn Clubs)",
+				"args": [
+					"dev"
+				],
+				"command": "yarn",
+				"options": {
+					"cwd": "${workspaceFolder:Frontend}"
+				},
+				"problemMatcher": []
+			},
+			{
+				"type": "shell",
+				"label": "Run Frontend (Hub@Penn)",
+				"args": [
+					"dev"
+				],
+				"command": "yarn",
+				"options": {
+					"cwd": "${workspaceFolder:Frontend}",
+					"env": {
+						"NEXT_PUBLIC_SITE_NAME": "fyh"
+					}
+				},
+				"problemMatcher": []
+			},
+			{
+				"type": "shell",
+				"label": "Run Backend (Hub@Penn)",
+				"args": [
+					"run",
+					"python",
+					"manage.py",
+					"runserver"
+				],
+				"command": "pipenv",
+				"options": {
+					"cwd": "${workspaceFolder:Backend}",
+					"env": {
+						"NEXT_PUBLIC_SITE_NAME": "fyh"
+					}
+				},
+				"problemMatcher": []
+			},
+		]
+	}
+}

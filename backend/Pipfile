@@ -1,0 +1,61 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+codecov = "*"
+black = "==19.10b0"
+unittest-xml-reporting = ">=3.0.2"
+flake8 = "==5.0.3"
+flake8-isort = "*"
+isort = "*"
+flake8-quotes = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+
+[packages]
+dj-database-url = "*"
+djangorestframework = "*"
+sentry-sdk = "*"
+django = "<4"
+django-labs-accounts = "*"
+drf-nested-routers = "*"
+"bs4" = "*"
+bleach = "==4.1.0"
+django-cors-headers = "*"
+uritemplate = "*"
+pyyaml = "*"
+django-storages = "*"
+pillow = "*"
+"boto3" = "*"
+django-phonenumber-field = "*"
+phonenumbers = "*"
+qrcode = "*"
+drf-renderer-xlsx = "==0.3.9"
+python-dateutil = "*"
+psycopg2 = "*"
+django-simple-history = "*"
+channels = "<3"
+django-runtime-options = "*"
+social-auth-app-django = "*"
+django-redis = "*"
+channels-redis = "*"
+uwsgi = {version = "*", sys_platform = "== 'linux'"}
+uvloop = {version = "*", sys_platform = "== 'linux'"}
+uvicorn = {extras = ["standard"], version = "*"}
+gunicorn = "*"
+httptools = "*"
+ics = "==0.7"
+urlextract = "*"
+jsonref = "*"
+unittest-xml-reporting = "*"
+tblib = "*"
+pre-commit = "*"
+django-clone = "*"
+click = "==8.0.4"
+jinja2 = "*"
+pandas = "*"
+
+[requires]
+python_version = "3"

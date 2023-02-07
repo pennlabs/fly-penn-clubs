@@ -1,0 +1,55 @@
+<!-- SUBJECT: Deadline: Submit Hub@Penn Resource by December 2 -->
+<!-- TYPES:
+resources:
+    type: array
+    items:
+        type: string
+-->
+{% extends 'fyh_emails/base.html' %}
+
+{% block content %}
+<h2>Submit Hub@Penn Resource by December 2</h2>
+<p style="font-size: 1.2em">
+    Thank you to everyone who has already completed your <a href="https://hub.provost.upenn.edu/">Hub@Penn</a> resource
+    page!</p>
+<p style="font-size: 1.2em">
+    As a reminder, the all-new <a href="https://hub.provost.upenn.edu/">Hub@Penn</a> platform is as a place for Penn students to find and connect with support resources.
+    This platform comes at the request of Penn's senior administration and after close collaboration with NSOAI, OLI,
+    Penn Labs, and VPUL. We look forward to offering Hub@Penn as a resource for Penn students starting in advance of the
+    Spring 2021 semester.</p>
+<p style="font-size: 1.2em">We recently hosted (and recorded) a demo of the platform which provides a background of the
+    platform development as well as instructions on how to add your resource. To view the 20-minute demo, click <a
+        href="https://upenn.box.com/s/f9gtow2jxvdnlm0kf66t2c8i2p6znerm">here</a>.</p>
+<p style="font-size: 1.2em; font-weight: bold">
+    If you have not created your resource page by the deadline – December 2, please <a href="https://hub.provost.upenn.edu/create">submit</a> your information as soon as
+    possible. We hope to have our initial phase of primary resource pages completed by December 3. Please note - you may
+    also edit your entry at any time.
+</p>
+
+<p style="font-size: 1.2em">You have been designated to populate information for the following resource(s):</p>
+<ul>{% for resource in resources %}<li><b>{{ resource }}</b></li>{% endfor %}</ul>
+
+<p style="font-size: 1.2em">If there is another more appropriate contact to serve as the liaison between your resource
+    and the Hub@Penn administrators, please feel free to forward this message and/or let us know who we should contact
+    in future communications.</p>
+<p style="font-size: 1.2em">To account for rapid changes throughout 2020 and in preparation for the start of the Spring
+    2021 semester, you are welcome to provide general information about your resource, directing students to your
+    website for the most up-to-date information.
+</p>
+<p style="font-size: 1.2em; font-weight: bold;">If you're having trouble submitting a resource, the developers recommend:</p>
+<ol style="font-size: 1.2em;">
+    <li>Try filling out the form in incognito mode.</li>
+    <li>Be sure the Public and Internal Points of Contact are saved before hitting submit.</li>
+</ol>
+<p style="font-size: 1.2em">If you have any feedback or need troubleshooting, please email <a
+        href="mailto:hub.provost@upenn.edu">hub.provost@upenn.edu</a> and the Penn Labs team will be in contact shortly.
+</p>
+<p style="font-size: 1.2em">Thank you in advance for taking the time to ensure easy access to your resource through
+    Hub@Penn and as always for the resources your office offers our Penn community.</p>
+<p style="font-size: 1.2em">Thanks again,</p>
+<p style="font-size: 1.2em">Hub@Penn Planning Committee<br /><a
+        href="https://hub.provost.upenn.edu/">hub.provost.upenn.edu</a><br /><a
+        href="mailto:hub.provost@upenn.edu">hub.provost@upenn.edu</a></p>
+<p style="font-size: 1.2em">Office of New Student Orientation & Academic Initiatives (NSOAI)<br />
+    Vice Provost for University Life (VPUL)<br />Penn Labs<br />Online Learning Initiative (OLI)</p>
+{% endblock %}

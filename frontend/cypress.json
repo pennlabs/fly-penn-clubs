@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://traefik",
+  "fixturesFolder": false,
+  "viewportWidth": 1200,
+  "defaultCommandTimeout": 60000,
+  "videoUploadOnPasses": false
+}

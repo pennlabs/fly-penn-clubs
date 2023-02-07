@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Email Template Preview</title>
+        <style>
+        body
+        {
+            background-color: #ccc;
+        }
+        #email, #text-email, #variables
+        {
+            max-width: 800px;
+            background-color: white;
+            border: 1px solid #aaa;
+            margin: 15px auto;
+            font-family: sans-serif;
+            font-size: 13px;
+            padding: 15px;
+        }
+        #email a
+        {
+            color: #15c;
+        }
+        #text-email
+        {
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        #templates
+        {
+            text-align: center;
+            margin-top: 15px;
+        }
+        #templates a
+        {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 3px;
+            text-decoration: none;
+            margin: 5px;
+            background-color: #eee;
+        }
+        #variables textarea {
+            width: 100%;
+        }
+        </style>
+        <script>
+            window.addEventListener('load', e => {
+                const links = document.querySelectorAll('#email a')
+                for (const link of links) {
+                    link.addEventListener('click', e => {
+                        e.preventDefault()
+                    })
+                }
+
+                document.getElementById("update").addEventListener("click", () => {
+                    const params = new URLSearchParams(window.location.search);
+                    const vars = document.querySelector("#variables textarea").value;
+                    params.set("variables", JSON.stringify(JSON.parse(vars)));
+                    window.location.href = window.location.pathname + "?" + params.toString();
+                });
+
+                const textarea = document.querySelector("#variables textarea");
+                textarea.setAttribute("rows", textarea.value.split("\n").length)
+            })
+
+        </script>
+    </head>
+    <body>
+        <div id="templates">
+        {% for template in templates %}
+            <a href="?email={{template}}">{{template|title}}</a>
+        {% endfor %}
+        </div>
+        <div id="email">
+            {{email}}
+        </div>
+        <div id="text-email">{{text_email}}</div>
+        <div id="variables">
+            <b>Used Variables</b>
+            <div><textarea>{{variables}}</textarea></div>
+            <button id="update">Update Values</button>
+        </div>
+    </body>
+</html>

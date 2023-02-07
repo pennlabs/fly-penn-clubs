@@ -1,0 +1,37 @@
+<!-- TYPES:
+name:
+    type: string
+num_subscriptions:
+    type: number
+prefix:
+    type: string
+subscriptions_url:
+    type: string
+-->
+{% extends 'emails/base.html' %}
+
+{% block content %}
+    <h2>[{{ prefix }}] SAC Fair Feedback & Information</h2>
+    <p style="font-size: 1.2em">
+    	Hi {{ name }} officers!
+    </p>
+    <p style="font-size: 1.2em">
+        We hope you had a great SAC Fair! As a club officer, we would love to hear your feedback on the 
+        transition to Penn Clubs this summer and any comments you have about the SAC Fair.
+    </p>
+    <p style="font-size: 1.2em">
+        <b>We also wanted to remind you to take advantage of your "Subscriptions" list,</b> which currently
+        has <b>{{ num_subscriptions }}</b> users' information easily accessible to you — a feature that
+        Penn Clubs has put together for users to easily be added to your listserv through an Excel
+        download. It is <b>imperative</b> that if you have an application, info session, or additional
+         information, that you reach out to these prospective students. You can access your club's 
+         Subscriptions list by clicking <a href="{{ subscriptions_url }}">here</a>.
+    </p>
+
+    <p style="font-size: 1.2em">
+        Thank you for using the Penn Clubs platform during the SAC Fair! We appreciate your patience
+        as we transition to this new platform. We would love to hear your feedback.
+    </p>
+
+    <a style="text-decoration: none; padding: 5px 20px; font-size: 1.5em; margin-top: 25px; color: white; background-color: rgb(32, 156, 238); border-radius: 3px; font-weight: bold" href="https://airtable.com/shrMHAuo1C5t4RJ1R">Fill out our Survey!</a>
+{% endblock %}
